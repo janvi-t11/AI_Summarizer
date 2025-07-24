@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai summarizer</title>
+    
+<style>
+    html, body {
+    width: 350px;
+    max-width: 100vw;
+    min-width: 300px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+body {
+    padding: 18px;
+    background-color: #f5f7fa;
+}
+
+/* Update #result */
+#result {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 60px;      /* Lowered from 150px */
+    max-height: 250px;     /* Lowered from 400px */
+    overflow-y: auto;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f7fa;
+    }
+    h2 {
+        color: #274472;
+        margin-bottom: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: color 0.2s;
+    }
+    h2:hover {
+        color: #3a5a99;
+    }
+    .options {
+        margin-bottom: 18px;
+        background: #e9eef6;
+        padding: 14px 12px 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #dde3ec;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-shadow: 0 2px 8px 0 rgba(39,68,114,0.04);
+        transition: box-shadow 0.2s;
+    }
+    .options:hover {
+        box-shadow: 0 4px 16px 0 rgba(39,68,114,0.10);
+    }
+    select, button {
+        padding: 10px 16px;
+        border-radius: 7px;
+        border: 1px solid #cfd8e3;
+        background: #fff;
+        color: #274472;
+        font-size: 1em;
+        transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+        outline: none;
+        box-shadow: 0 1px 2px 0 rgba(39,68,114,0.03);
+    }
+    select:focus, button:focus {
+        border-color: #a3bffa;
+        box-shadow: 0 0 0 2px #e0e7ff;
+        transform: scale(1.03);
+    }
+    button {
+        background: #e3eefd;
+        cursor: pointer;
+        border: 1px solid #b6c8e6;
+        transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    }
+    button:hover {
+        background: #d0e2fc;
+        border-color: #7ea6e6;
+        transform: scale(1.04);
+    }
+      #result {
+        margin-top: 15px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        min-height: 150px;
+        max-height: 400px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        line-height: 1.5;
+      }
+
+      #result ul {
+        padding-left: 20px;
+      }
+
+      #result li {
+        margin-bottom: 10px;
+      }
+    #result p {
+        margin: 0 0 10px;
+      } @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+     
+        
+      }
+    loader {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+</style>
+</head>
+<body>
+    <h2>AI Summary</h2>
+
+    <div class="options">
+        <select id="summary-type">
+        <option value="short">Short Summary</option>
+        <option value="long">Long Summary</option>
+        <option value="detailed">Detailed Summary</option>
+        <option value="bullet">Bullet Points</option>
+        <option value="outline">Outline Summary</option>
+        <option value="key points">Key Points</option>
+    </select>
+<br>
+    <button id="summarize">Summarize This Page</button>
+    <br>
+    <button id="copy-btn">Copy Summary</button>
+    </div>
+   
+    
+
+    <div id="result">
+        Select a summary type and click 'Summarize This Page' to generate a
+      summary.
+    </div>
+    <script src="popup.js"></script> 
+    <script src="config.js"></script>
+
+</body>
+</html>

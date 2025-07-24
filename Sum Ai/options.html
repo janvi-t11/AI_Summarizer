@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Summary Settings</title>
+    <style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 32px 20px;
+    max-width: 420px;
+    margin: 32px auto;
+    background: #f7fafd;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(60,80,120,0.07);
+  }
+  h1 {
+    color: #274472;
+    margin-bottom: 24px;
+    font-size: 1.7em;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .form-group {
+    margin-bottom: 22px;
+  }
+  label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #2d3a4a;
+    letter-spacing: 0.5px;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    border: 1.5px solid #dde3ec;
+    border-radius: 7px;
+    background: #f5f7fa;
+    font-size: 1em;
+    color: #274472;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  input[type="text"]:focus {
+    border-color: #a3bffa;
+    box-shadow: 0 0 0 2px #e0e7ff;
+    background: #fff;
+  }
+  button {
+    background-color: #e3eefd;
+    color: #274472;
+    border: 1px solid #b6c8e6;
+    padding: 11px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    margin-top: 8px;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgba(39,68,114,0.03);
+  }
+  button:hover, button:focus {
+    background-color: #d0e2fc;
+    border-color: #7ea6e6;
+    transform: scale(1.03);
+  }
+  a {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: #274472;
+    text-decoration: underline;
+  }
+  .success-message {
+    color: #2bb673;
+    margin-top: 16px;
+    background: #eafaf1;
+    border: 1px solid #b6e7d6;
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: none;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.7s;
+  }
+  .success-message.show {
+    display: block;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+</style>
+  </head>
+  <body>
+    <h1>AI Summary Settings</h1>
+
+    <div class="form-group">
+      <label for="api-key">Gemini API Key:</label>
+      <input type="text" id="api-key" placeholder="Enter your Gemini API key" />
+      <p>
+        You can get an API key from
+        <a href="https://makersuite.google.com/app/apikey" target="_blank"
+          >Google AI Studio</a
+        >
+      </p>
+    </div>
+
+    <button id="save-button">Save Settings</button>
+    <p id="success-message" class="success-message">
+      Settings saved successfully!
+    </p>
+
+    <script src="options.js"></script>
+  </body>
+</html>
